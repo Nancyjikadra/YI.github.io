@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Influencers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Select 5 Influencers</h1>
+        <form id="influencerForm">
+            <label><input type="checkbox" name="influencer" value="influencer1"> Influencer 1</label>
+            <label><input type="checkbox" name="influencer" value="influencer2"> Influencer 2</label>
+            <label><input type="checkbox" name="influencer" value="influencer3"> Influencer 3</label>
+            <label><input type="checkbox" name="influencer" value="influencer4"> Influencer 4</label>
+            <label><input type="checkbox" name="influencer" value="influencer5"> Influencer 5</label>
+            <label><input type="checkbox" name="influencer" value="influencer6"> Influencer 6</label>
+            <button type="submit">Get Started</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
