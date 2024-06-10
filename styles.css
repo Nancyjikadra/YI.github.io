@@ -3,17 +3,13 @@ body {
     background-color: #f7f7f7;
 }
 
-.container {
-    max-width: 400px;
-    margin: 40px auto;
+section {
+    display: none;
     padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.login-form {
-    text-align: center;
+section.active {
+    display: block;
 }
 
 h2 {
@@ -41,24 +37,3 @@ button[type="submit"] {
     color: #fff;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: #3e8e41;
-}
-
-p {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #666;
-}
-
-a {
-    text-decoration: none;
-    color: #337ab7;
-}
-
-a:hover {
-    color: #23527c;
-}
