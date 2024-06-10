@@ -5,55 +5,37 @@ body {
     padding: 0;
 }
 
-header {
-    background-color: #337ab7;
+.container {
+    max-width: 400px;
+    margin: 40px auto;
     padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.login-form {
     text-align: center;
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-nav li {
-    margin-right: 20px;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-
-.hero {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.hero h1 {
-    font-weight: bold;
-    font-size: 36px;
+h2 {
     margin-top: 0;
+    font-weight: bold;
+    color: #337ab7;
 }
 
-.hero p {
-    font-size: 18px;
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    height: 40px;
     margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.hero button {
+button[type="submit"] {
     background-color: #4CAF50;
     color: #fff;
     border: none;
@@ -62,36 +44,6 @@ main {
     cursor: pointer;
 }
 
-.hero button:hover {
+button[type="submit"]:hover {
     background-color: #3e8e41;
 }
-
-.features {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.features h2 {
-    font-weight: bold;
-    font-size: 24px;
-    margin-top: 0;
-}
-
-.features ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.features li {
-    margin-bottom: 20px;
-}
-
-.features i {
-    font-size: 24px;
-    margin-right: 10px;
-}
-
-.features h3
