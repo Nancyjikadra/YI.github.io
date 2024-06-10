@@ -1,20 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot Login</title>
-    <link rel="stylesheet" href="styles.css">
+<title>Job Seeker Website</title>
+<style>
+body {
+  background-color: #F5F5F5; /* Light gray background */
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 500px;
+  max-width: 100%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222; /* Dark gray text */
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #f44336; /* Red button */
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-button {
+  margin: 0 10px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #eee;
+  color: #666; /* Gray social icons */
+}
+
+.social-button:hover {
+  background-color: #ddd;
+}
+
+.quote-section {
+  background-color: #f0f0f0; /* Light gray quote background */
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.quote-text {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.quote-author {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.quote-author-title {
+  font-size: 14px;
+  color: #666;
+}
+
+.cta-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.cta-button {
+  background-color: #4CAF50; /* Green button */
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.cta-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Login</h1>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
+<div class="container">
+  <div class="card">
+    <h1>Welcome Back</h1>
+    <form>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Sign In</button>
+    </form>
+    <div class="social-buttons">
+      <div class="social-button"><i class="fab fa-google"></i></div>
+      <div class="social-button"><i class="fab fa-facebook-f"></i></div>
     </div>
-    <script src="script.js"></script>
+  </div>
+
+  <div class="card quote-section">
+    <h2>What's Our Jobseekers Said</h2>
+    <p class="quote-text">"Search and find your dream job is now easier than ever. Just browse a job and apply if you need to."</p>
+    <p class="quote-author">Max Pajima</p>
+    <p class="quote-author-title">UI Designer at Google</p>
+  </div>
+
+  <div class="card cta-section">
+    <h3>Get your right job and right place apply now</h3>
+    <button class="cta-button">Start Exploring</button>
+  </div>
+</div>
 </body>
 </html>
