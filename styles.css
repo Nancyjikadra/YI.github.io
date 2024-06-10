@@ -1,71 +1,97 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f7f7f7;
     margin: 0;
     padding: 0;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
+header {
+    background-color: #337ab7;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin-top: 50px;
-}
-
-h1 {
     text-align: center;
 }
 
-form {
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
 }
 
-input[type="text"],
-input[type="password"],
-button {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
+.hero {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-input[type="checkbox"] {
-    margin-right: 10px;
+.hero h1 {
+    font-weight: bold;
+    font-size: 36px;
+    margin-top: 0;
 }
 
-#chatWindow {
-    border: 1px solid #ccc;
-    padding: 10px;
-    height: 300px;
-    overflow-y: scroll;
+.hero p {
+    font-size: 18px;
     margin-bottom: 20px;
 }
 
-#messages {
-    display: flex;
-    flex-direction: column;
+.hero button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-.message {
-    margin: 5px 0;
+.hero button:hover {
+    background-color: #3e8e41;
 }
 
-.user {
-    align-self: flex-end;
-    background-color: #d1f5d3;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 60%;
+.features {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.bot {
-    align-self: flex-start;
-    background-color: #f1f1f1;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 60%;
+.features h2 {
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 0;
 }
+
+.features ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.features li {
+    margin-bottom: 20px;
+}
+
+.features i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.features h3
