@@ -38,7 +38,7 @@
 
         button {
             background-color: #ffc5c5;
-            color: white;
+            color: #333; /* darker font color */
             padding: 12px 20px;
             border: none;
             border-radius: 5px;
@@ -155,7 +155,7 @@
 
        .chatbox button {
             background-color: #ffc5c5;
-            color: white;
+            color: #333; /* darker font color */
             padding: 12px 20px;
             border: none;
             border-radius: 5px;
@@ -188,6 +188,10 @@
        .bot-message {
             background: #f8f4ff;
             text-align: left;
+        }
+
+       .chatbot-page {
+            display: none;
         }
     </style>
 </head>
@@ -247,6 +251,14 @@
             </div>
         </div>
         <button onclick="nextStep()">Next</button>
+    </div>
+    <div class="next-page chatbot-page" id="chatbotPage">
+        <h2>Chatbot</h2>
+        <div class="chatbox">
+            <div id="messages" class="messages"></div>
+            <input type="text" id="message" placeholder="Type your message here...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
     </div>
     <script>
         const loginPage = document.getElementById('loginPage');
