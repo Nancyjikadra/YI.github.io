@@ -3,65 +3,329 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Young & Calm</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Your Influencer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #f06d8f, #f29680, #f4bb74, #f5de6b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #f29680;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #f29680;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #f06d8f;
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-login img {
+            margin: 0 5px;
+        }
+
+        .quote {
+            background: #f06d8f;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .quote p {
+            margin: 0;
+        }
+
+        .quote h3 {
+            color: #f4bb74;
+            margin-top: 10px;
+        }
+
+        .next-page {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .category {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 200px;
+        }
+
+        .category img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .influencers {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .influencer {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 200px;
+        }
+
+        .influencer img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .chatbot {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .chatbox {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        .chatbox input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .chatbox button {
+            background-color: #f29680;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .chatbox button:hover {
+            background-color: #f06d8f;
+        }
+
+        .messages {
+            height: 300px;
+            overflow-y: scroll;
+            padding: 10px;
+        }
+
+        .message {
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .user-message {
+            background: #f29680;
+            color: white;
+            text-align: right;
+        }
+
+        .bot-message {
+            background: #f4bb74;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
-    <section id="login">
-        <h2>Login</h2>
-        <form>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-    </section>
-
-    <section id="categories">
-        <h2>Categories</h2>
+    <div class="container" id="loginPage">
+        <h1>Welcome back</h1>
+        <input type="text" placeholder="Email" id="email">
+        <input type="password" placeholder="Password" id="password">
+        <button onclick="login()">Sign In</button>
+        <div class="social-login">
+            <img src="google.png" alt="Google">
+            <img src="facebook.png" alt="Facebook">
+            <img src="twitter.png" alt="Twitter">
+        </div>
+        <div class="quote">
+            <p>"Search and find your dream job is now easier than ever. Just browse a job and apply if you need to."</p>
+            <h3>Max Pajomo</h3>
+            <p>UI Designer at Google</p>
+        </div>
+    </div>
+    <div class="next-page" id="categoryPage">
+        <h2>Select your categories</h2>
         <div class="categories">
             <div class="category">
                 <img src="health.jpg" alt="Health">
-                <p>Health</p>
-                <input type="checkbox" id="health" name="categories">
+                <h3>Health</h3>
             </div>
             <div class="category">
                 <img src="fashion.jpg" alt="Fashion">
-                <p>Fashion</p>
-                <input type="checkbox" id="fashion" name="categories">
+                <h3>Fashion</h3>
             </div>
             <div class="category">
                 <img src="formals.jpg" alt="Formals">
-                <p>Formals</p>
-                <input type="checkbox" id="formals" name="categories">
+                <h3>Formals</h3>
             </div>
-            <!-- Add more categories here -->
+            <div class="category">
+                <img src="diet.jpg" alt="Diet">
+                <h3>Diet</h3>
+            </div>
+            <div class="category">
+                <img src="hair.jpg" alt="Hair">
+                <h3>Hair</h3>
+            </div>
         </div>
-        <button type="submit">Next</button>
-    </section>
-
-    <section id="influencers">
-        <h2>Influencers</h2>
+        <button onclick="nextStep()">Next</button>
+    </div>
+    <div class="next-page" id="influencerPage">
+        <h2>Select your influencers</h2>
         <div class="influencers">
             <div class="influencer">
-                <img src="techguruji.jpg" alt="Influencer 1">
-                <p>Technical Guruji(Technology)</p>
-                <input type="checkbox" id="influencer1" name="influencers">
+                <img src="influencer1.jpg" alt="Influencer 1">
+                <h3>Influencer 1</h3>
+                <p>Health</p>
             </div>
             <div class="influencer">
-                <img src="nisha.jpg" alt="Influencer 2">
-                <p>Nisha (Cooking)</p>
-                <input type="checkbox" id="influencer2" name="influencers">
+                <img src="influencer2.jpg" alt="Influencer 2">
+                <h3>Influencer 2</h3>
+                <p>Fashion</p>
             </div>
             <div class="influencer">
-                <img src="ajju.jpg" alt="Influencer 3">
-                <p>Ajjubhai</p>
-                <input type="checkbox" id="influencer3" name="influencers">
+                <img src="influencer3.jpg" alt="Influencer 3">
+                <h3>Influencer 3</h3>
+                <p>Formals</p>
             </div>
-            <!-- Add more influencers here -->
+            <div class="influencer">
+                <img src="influencer4.jpg" alt="Influencer 4">
+                <h3>Influencer 4</h3>
+                <p>Diet</p>
+            </div>
+            <div class="influencer">
+                <img src="influencer5.jpg" alt="Influencer 5">
+                <h3>Influencer 5</h3>
+                <p>Hair</p>
+            </div>
         </div>
-        <button type="submit">Next</button>
-    </section>
+        <button onclick="nextStep()">Next</button>
+    </div>
+    <div class="chatbot" id="chatbotPage">
+        <h2>Chat with your Influencer</h2>
+        <div class="chatbox">
+            <div class="messages" id="messages"></div>
+            <input type="text" placeholder="Type your message" id="message">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <script>
+        const loginPage = document.getElementById('loginPage');
+        const categoryPage = document.getElementById('categoryPage');
+        const influencerPage = document.getElementById('influencerPage');
+        const chatbotPage = document.getElementById('chatbotPage');
+        const messages = document.getElementById('messages');
 
-    <script src="script.js"></script>
+        function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Simulate login validation
+            if (email === 'your@email.com' && password === 'password') {
+                loginPage.style.display = 'none';
+                categoryPage.style.display = 'flex';
+            } else {
+                alert('Invalid credentials');
+            }
+        }
+
+        function nextStep() {
+            categoryPage.style.display = 'none';
+            influencerPage.style.display = 'flex';
+        }
+
+        function sendMessage() {
+            const message = document.getElementById('message').value;
+            if (message.trim() !== '') {
+                const userMessage = document.createElement('div');
+                userMessage.classList.add('message', 'user-message');
+                userMessage.textContent = message;
+                messages.appendChild(userMessage);
+
+                // Simulate chatbot response
+                setTimeout(() => {
+                    const botMessage = document.createElement('div');
+                    botMessage.classList.add('message', 'bot-message');
+                    botMessage.textContent = 'Hello! How can I help you today?';
+                    messages.appendChild(botMessage);
+                    messages.scrollTop = messages.scrollHeight; // Scroll to bottom
+                }, 1000);
+                document.getElementById('message').value = '';
+            }
+        }
+    </script>
 </body>
 </html>
