@@ -1,58 +1,32 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const loginForm = document.getElementById('loginForm');
-    if (loginForm) {
-        loginForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            window.location.href = 'categories.html';
-        });
-    }
+// Add event listeners to buttons and forms
+document.addEventListener("DOMContentLoaded", function() {
+    // Login form submission
+    document.querySelector("form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        // Validate login credentials and redirect to categories page
+        window.location.href = "categories.html";
+    });
 
-    const categoryForm = document.getElementById('categoryForm');
-    if (categoryForm) {
-        categoryForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const selectedCategories = document.querySelectorAll('input[name="category"]:checked');
-            if (selectedCategories.length !== 3) {
-                alert('Please select exactly 3 categories.');
-                return;
-            }
-            window.location.href = 'influencers.html';
-        });
-    }
+    // Categories selection submission
+    document.querySelector("ul").addEventListener("click", function(event) {
+        if (event.target.type === "checkbox") {
+            // Validate category selection and redirect to influencers page
+            window.location.href = "influencers.html";
+        }
+    });
 
-    const influencerForm = document.getElementById('influencerForm');
-    if (influencerForm) {
-        influencerForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const selectedInfluencers = document.querySelectorAll('input[name="influencer"]:checked');
-            if (selectedInfluencers.length !== 5) {
-                alert('Please select exactly 5 influencers.');
-                return;
-            }
-            window.location.href = 'chatbot.html';
-        });
-    }
+    // Influencers selection submission
+    document.querySelector("ul").addEventListener("click", function(event) {
+        if (event.target.type === "checkbox") {
+            // Validate influencer selection and redirect to chatbot page
+            window.location.href = "chatbot.html";
+        }
+    });
 
-    const chatForm = document.getElementById('chatForm');
-    if (chatForm) {
-        chatForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const userMessage = document.getElementById('userMessage').value;
-            const messages = document.getElementById('messages');
-            const userMessageDiv = document.createElement('div');
-            userMessageDiv.classList.add('message', 'user');
-            userMessageDiv.textContent = userMessage;
-            messages.appendChild(userMessageDiv);
-            document.getElementById('userMessage').value = '';
-
-            // Simulating bot response
-            setTimeout(() => {
-                const botMessageDiv = document.createElement('div');
-                botMessageDiv.classList.add('message', 'bot');
-                botMessageDiv.textContent = "Bot response to: " + userMessage;
-                messages.appendChild(botMessageDiv);
-                messages.scrollTop = messages.scrollHeight;
-            }, 1000);
-        });
-    }
+    // Chatbot input submission
+    document.querySelector(".chatbot-input button").addEventListener("click", function(event) {
+        event.preventDefault();
+        // Send message to chatbot and display response
+        // TO DO: Implement chatbot logic here
+    });
 });
