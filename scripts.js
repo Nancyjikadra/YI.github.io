@@ -29,54 +29,51 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // If all validation passes, redirect to categories page
         window.location.href = "categories.html";
-
-        nextButton.addEventListener("click", function() {
-    const selectedCategories = [];
-    categories.forEach(function(category) {
-        const checkbox = category.querySelector("input[type='checkbox']");
-        if (checkbox.checked) {
-            selectedCategories.push(category);
-        }
     });
 
-    if (selectedCategories.length < 3) {
-        alert("Please select at least 3 categories.");
-        return;
-    }
-
-    // Redirect to influencers page
-    window.location.href = "influencers.html";
-});
-
+    // Add event listener for next button on categories page
     document.addEventListener("DOMContentLoaded", function() {
-    const influencers = document.querySelectorAll(".influencer");
-    const nextButton = document.querySelector("button[type='submit']");
+        const nextButton = document.querySelector("button[type='submit']");
+        nextButton.addEventListener("click", function() {
+            const selectedCategories = [];
+            const categories = document.querySelectorAll(".category");
+            categories.forEach(function(category) {
+                const checkbox = category.querySelector("input[type='checkbox']");
+                if (checkbox.checked) {
+                    selectedCategories.push(category);
+                }
+            });
 
-    influencers.forEach(function(influencer) {
-        influencer.addEventListener("click", function() {
-            const checkbox = influencer.querySelector("input[type='checkbox']");
-            checkbox.checked =!checkbox.checked;
-        });
-    });
-
-    nextButton.addEventListener("click", function() {
-        const selectedInfluencers = [];
-        influencers.forEach(function(influencer) {
-            const checkbox = influencer.querySelector("input[type='checkbox']");
-            if (checkbox.checked) {
-                selectedInfluencers.push(influencer);
+            if (selectedCategories.length < 3) {
+                alert("Please select at least 3 categories.");
+                return;
             }
+
+            // Redirect to influencers page
+            window.location.href = "influencers.html";
         });
+    });
 
-        if (selectedInfluencers.length < 3) {
-            alert("Please select at least 3 influencers.");
-            return;
-        }
+    // Add event listener for next button on influencers page
+    document.addEventListener("DOMContentLoaded", function() {
+        const nextButton = document.querySelector("button[type='submit']");
+        nextButton.addEventListener("click", function() {
+            const selectedInfluencers = [];
+            const influencers = document.querySelectorAll(".influencer");
+            influencers.forEach(function(influencer) {
+                const checkbox = influencer.querySelector("input[type='checkbox']");
+                if (checkbox.checked) {
+                    selectedInfluencers.push(influencer);
+                }
+            });
 
-        // Redirect to chatbot page
-        window.location.href = "chatbot.html";
+            if (selectedInfluencers.length < 3) {
+                alert("Please select at least 3 influencers.");
+                return;
+            }
+
+            // Redirect to chatbot page
+            window.location.href = "chatbot.html";
+        });
     });
 });
-    });
-});
-
