@@ -207,9 +207,9 @@ button:hover {
         <input type="password" placeholder="Password" id="password">
         <button onclick="login()">Sign In</button>
         <div class="social-login">
-            <img src="google.png" alt="Google">
-            <img src="insta.png" alt="Instagram">
-            <img src="yt.png" alt="Youtube">
+            <img src="google.jpg" alt="Google">
+            <img src="insta.jpg" alt="Instagram">
+            <img src="yt.jpg" alt="Youtube">
         </div>
         <div class="quote">
             <p>Get your personalized answers from "Your Influencer".</p>
@@ -232,14 +232,7 @@ button:hover {
                 <img src="formals.jpg" alt="Formals">
                 <h3>Formals</h3>
             </div>
-            <div class="category">
-                <img src="diet.jpg" alt="Diet">
-                <h3>Diet</h3>
-            </div>
-            <div class="category">
-                <img src="hair.jpg" alt="Hair">
-                <h3>Hair</h3>
-            </div>
+            
         </div>
         <button onclick="nextStep()">Next</button>
     </div>
@@ -279,23 +272,28 @@ button:hover {
         const chatbotPage = document.getElementById('chatbotPage');
         const messages = document.getElementById('messages');
 
-        function login() {
+ function login() {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    // Simulate login validation
-    if (email === 'your@email.com' && password === 'password') {
+    // Check if both email and password are not empty
+    if (email.trim() !== '' && password.trim() !== '') {
         loginPage.style.display = 'none';
         categoryPage.style.display = 'flex';
     } else {
-        alert('Invalid credentials');
+        alert('Please enter both email and password.');
     }
 }
 
         function nextStep() {
-            categoryPage.style.display = 'none';
-            influencerPage.style.display = 'flex';
-        }
+    if (categoryPage.style.display === 'flex') {
+        categoryPage.style.display = 'none';
+        influencerPage.style.display = 'flex';
+    } else if (influencerPage.style.display === 'flex') {
+        influencerPage.style.display = 'none';
+        chatbotPage.style.display = 'flex';
+    }
+}
 
         function sendMessage() {
             const message = document.getElementById('message').value;
